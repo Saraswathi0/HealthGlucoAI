@@ -9,7 +9,7 @@ Original file is located at
 
 import pandas as pd
 
-r=pd.read_excel("diabetes.xlsx")
+r=pd.read_csv("diabetes.csv")
 
 #r.head(5)
 
