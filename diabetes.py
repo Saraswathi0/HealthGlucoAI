@@ -23,6 +23,10 @@ x=r.drop('Outcome',axis=1)
 y=r['Outcome']
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+x_train = scaler.fit_transform(x_train)
+x_test = scaler.transform(x_test)
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
@@ -110,6 +114,7 @@ DiabetesPedigreeFunction=st.number_input("Enter your DiabetesPedigreeFunction:")
 
 if st.button("predict"):
     data=[[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,age]]
+    data = scaler.transform(data)
     final_solution=model3.predict(data)
     if final_solution==1:
         st.write(name)
