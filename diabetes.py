@@ -21,9 +21,7 @@ r=pd.read_csv("diabetes.csv")
 
 x=r.drop('Outcome',axis=1)
 y=r['Outcome']
-
 from sklearn.model_selection import train_test_split
-
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)
 
 from sklearn.linear_model import LogisticRegression
@@ -97,6 +95,7 @@ score4=cross_val_score(model4,x,y,cv=5,scoring='accuracy')
 import streamlit as st
 
 st.title("HealthGlucoAI")
+st.write("This app will help you to find if your have diabetes or not")
 
 name = st.text_input("Enter your name:")
 age=st.number_input("Enter your age:")
