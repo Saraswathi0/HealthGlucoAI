@@ -11,13 +11,13 @@ import pandas as pd
 
 r=pd.read_excel("diabetes.xlsx")
 
-r.head(5)
+#r.head(5)
 
-r.isnull().sum()
+#r.isnull().sum()
 
-r.shape
+#r.shape
 
-r.describe()
+#r.describe()
 
 x=r.drop('Outcome',axis=1)
 y=r['Outcome']
@@ -61,17 +61,14 @@ a2=accuracy_score(y_test,y_pred2)
 a3=accuracy_score(y_test,y_pred3)
 a4=accuracy_score(y_test,y_pred4)
 
-print(a1*100)
-print(a2*100)
-print(a3*100)
-print(a4*100)
+#print(a2*100)
+#print(a3*100)
+#print(a4*100)
 
-print(m1*100)
-print(m2*100)
-print(m3*100)
-print(m4*100)
-
-from sklearn
+#print(m1*100)
+#print(m2*100)
+#print(m3*100)
+#print(m4*100)
 
 import matplotlib.pyplot as plt
 
@@ -92,10 +89,10 @@ score2=cross_val_score(model2,x,y,cv=5,scoring='accuracy')
 score3=cross_val_score(model3,x,y,cv=5,scoring='accuracy')
 score4=cross_val_score(model4,x,y,cv=5,scoring='accuracy')
 
-print(score1.mean()*100)
-print(score2.mean()*100)
-print(score3.mean()*100)
-print(score4.mean()*100)
+#print(score1.mean()*100)
+#print(score2.mean()*100)
+#print(score3.mean()*100)
+#print(score4.mean()*100)
 
 import streamlit as st
 
